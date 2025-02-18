@@ -4,9 +4,18 @@ import { CustomButton } from "../components/CustomButton";
 const meta: Meta<typeof CustomButton> = {
   title: "Components/CustomButton",
   component: CustomButton,
+  // コンポーネントのデフォルト引数を設定
+  args: {
+    variant: "contained", // デフォルトのバリアント
+    color: "primary", // デフォルトの色
+  },
   argTypes: {
     variant: {
       control: { type: "select", options: ["contained", "outlined", "text"] },
+      description: "ボタンの表示スタイル",
+      table: {
+        defaultValue: { summary: "contained" },
+      },
     },
     color: {
       control: {
@@ -20,6 +29,10 @@ const meta: Meta<typeof CustomButton> = {
           "success",
         ],
       },
+      description: "ボタンの色",
+      table: {
+        defaultValue: { summary: "primary" },
+      },
     },
   },
 };
@@ -31,7 +44,7 @@ type Story = StoryObj<typeof CustomButton>;
 export const Default: Story = {
   args: {
     label: "Click me",
-    variant: "contained",
+    variant: "contained", // 明示的に指定
     color: "primary",
   },
 };

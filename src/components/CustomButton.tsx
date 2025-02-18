@@ -1,41 +1,29 @@
-// import React from "react";
-// import Button, { ButtonProps } from "@mui/material/Button";
+// components/CustomButton.tsx
+import React from "react";
+import { Button, ButtonProps } from "@mui/material";
 
-// export interface CustomButtonProps extends ButtonProps {
-//   children: React.ReactNode;
-// }
-
-// export const CustomButton: React.FC<CustomButtonProps> = ({
-//   children,
-//   variant = "contained",
-//   color = "primary",
-//   size = "medium",
-//   ...props
-// }) => {
-//   return (
-//     <Button variant={variant} color={color} size={size} {...props}>
-//       {children}
-//     </Button>
-//   );
-// };
-
-// export default CustomButton;
-
-import type React from "react";
-import { Button, type ButtonProps } from "@mui/material";
-
-export interface CustomButtonProps extends ButtonProps {
+export interface CustomButtonProps extends Omit<ButtonProps, "children"> {
   label: string;
-  className?: string;
+  variant?: "text" | "outlined" | "contained";
+  color?:
+    | "inherit"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "error"
+    | "info"
+    | "warning";
 }
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
   label,
-  className,
+  variant = "contained", // デフォルト値を設定
+  color = "primary", // デフォルト値を設定
   ...props
 }) => {
+  console.log(`Rendering button with variant: ${variant}, color: ${color}`); // デバッグ用
   return (
-    <Button className={`custom-button ${className || ""}`} {...props}>
+    <Button variant={variant} color={color} {...props}>
       {label}
     </Button>
   );

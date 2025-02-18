@@ -3,9 +3,9 @@ import { createTheme } from "@mui/material/styles";
 export const theme = createTheme({
   palette: {
     primary: {
-      light: "#7dd3fc",
+      light: "#f3e8ee",
       main: "#eb0eeb",
-      dark: "#0369a1",
+      dark: "#9b0b9b",
       contrastText: "#fff",
     },
     secondary: {
@@ -17,11 +17,13 @@ export const theme = createTheme({
   },
   components: {
     MuiButton: {
+      defaultProps: {
+        variant: "contained",
+      },
       styleOverrides: {
         root: {
-          borderRadius: "2px",
+          borderWidth: "4px",
           textTransform: "none",
-          transition: "all 0.2s ease-in-out",
           "&:hover": {
             transform: "translateY(-1px)",
           },
