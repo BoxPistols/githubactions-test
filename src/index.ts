@@ -1,6 +1,6 @@
-export { CustomButton } from "./components/CustomButton";
-export type { CustomButtonProps } from "./components/CustomButton";
+// export { CustomButton } from "./components/CustomButton
+// export type { CustomButtonProps } from "./components/CustomButton";
+// export { theme } from "./theme";
 
-// MUI のテーマ設定をまとめたファイル（例えば src/theme.ts）を再エクスポートしておくと、
-// 利用者が自前で ThemeProvider に渡すテーマとして使いやすくなります。
-export { theme } from "./theme";
+export * from "./components/CustomButton";
+export * from "./theme";
