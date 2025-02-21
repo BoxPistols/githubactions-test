@@ -33,8 +33,9 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-      include: ["src/**/*"],
-      exclude: ["src/**/*.stories.tsx"],
+      include: ["src/components/**/*", "src/theme.ts"],
+      exclude: ["src/**/*.stories.tsx", "src/App.tsx", "src/main.tsx"],
+      rollupTypes: true,
     }),
   ],
 });
