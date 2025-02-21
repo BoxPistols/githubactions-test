@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import { resolve } from "path";
 
 export default defineConfig({
   build: {
     lib: {
-      entry: "src/index.ts",
+      entry: resolve(__dirname, "src/index.ts"),
       name: "BoxPistolsDesignSystem",
       fileName: (format) => `index.${format}.js`,
     },
@@ -32,7 +33,8 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-      include: ["src/components", "src/theme"],
+      include: ["src/**/*"],
+      exclude: ["src/**/*.stories.tsx"],
     }),
   ],
 });
