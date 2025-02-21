@@ -15,6 +15,7 @@ export default defineConfig({
         "react",
         "react-dom",
         "@mui/material",
+        "@mui/material/styles",
         "@emotion/react",
         "@emotion/styled",
       ],
@@ -32,10 +33,11 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      insertTypesEntry: true,
       include: ["src/components/**/*", "src/theme.ts"],
       exclude: ["src/**/*.stories.tsx", "src/App.tsx", "src/main.tsx"],
       rollupTypes: true,
+      insertTypesEntry: true,
+      bundledPackages: ["@mui/material"],
     }),
   ],
 });
