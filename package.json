@@ -1,6 +1,6 @@
 {
   "name": "@boxpistols/githubactions-test",
-  "private": false,
+  "private": true,
   "version": "0.1.3",
   "files": [
     "dist",
@@ -22,7 +22,7 @@
   "type": "module",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
-    "access": "public"
+    "access": "restricted"
   },
   "scripts": {
     "dev": "vite",
