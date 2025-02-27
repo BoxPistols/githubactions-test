@@ -1,7 +1,7 @@
 {
   "name": "@boxpistols/githubactions-test",
-  "private": false,
-  "version": "0.1.3",
+  "private": true,
+  "version": "0.1.4",
   "files": [
     "dist",
     "tailwind.config.js",
@@ -22,7 +22,7 @@
   "type": "module",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
-    "access": "public"
+    "access": "restricted"
   },
   "scripts": {
     "dev": "vite",
